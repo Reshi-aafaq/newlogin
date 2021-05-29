@@ -90,13 +90,13 @@ class reset_form(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is None:
             raise ValidationError(f'Account doesnot exist')
-@app.route('/')
+
 @app.route('/home')
 def hoo():
     return render_template('hom.html')
 
 
-@app.route('/register',methods=['GET', 'POST'])
+@app.route('/',methods=['GET', 'POST'])
 def index():
     if current_user.is_authenticated:
         return redirect(url_for('hoo'))
