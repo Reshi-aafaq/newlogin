@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Reshi Aafaq">
+    <meta name="author" content="Aafaq Altaf">
+    <meta name="description" >
+    <title> Registration </title>
+
+    <style>
+
+        .rah{
+              color:green;
+
+              }
+
+    </style>
+
+</head>
+<body bgcolor=#dwfadw>
+
+<br> <br> <br>
+
+<center>
+
+<font color="red" size="2px" >
+  <b>  <i> <font color="black" size="2px">Bcrypt Hashing Used No body can access your Password </font> </i> <br>
+    Enter password lenght between 5-10 <br>
+    Enter username between 3-20 <br>
+      Enter valid email id <br>  </b>
+
+ </font>
+<form method=POST>
+     <fieldset >
+        <legend> <b>Register </b></legend>
+
+         <dir> </dir>
+
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    {{ form.user_name.label }}
+         {% if form.user_name.errors %}
+           <div>
+                            {% for error in form.user_name.errors %}
+
+                                <span>{{ error }}</span>
+
+                            {% endfor %}
+                      </div>
+                    {% else %}
+                        {{ form.user_name }}
+                    {% endif %}
+          <br> <br>
+    {{ form.email.label }}
+          {% if form.email.errors %}
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+
+                    {% else %}
+                        {{ form.email }}
+                    {% endif %}
+
+          <br> <br>
+    {{ form.password.label }} {{ form.password }} <br> <br>
+    {{ form.confirm.label }} {{ form.confirm }} <br> <br>
+
+    {{ form.submit() }}  <a href="{{ url_for('entermail') }}"> <b> Forget password</b></a><br> <br>
+    Already an account <a href = "{{ url_for('signin') }}"><font color="green"> Login
+           </font> </a> <br> <br><br><br><br><br><br><br><br> <br>
+    </dir>
+  </fieldset>
+
+</form>
+
+
+
+
+
+
+
+ </center>
+
+
+<center> <font color="black" size="6" >   <footer> @Aafaq Altaf</footer>  </font> </center>   </font>
+</body>
+</html>

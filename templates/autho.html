@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Database </title>
+</head>
+<body bgcolor='#dwfadw'>
+<font color="red" size="2px">
+
+<b>
+    Enter Access Password <br>
+  </b>
+ </font>
+
+<form method=POST>
+
+    <fieldset>
+
+        <legend> Access </legend>
+
+
+    <dir>
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+
+    {{ form.Access.label }} {{ form.Access }} <br> <br>
+    {{ form.submit() }} <br> <br>
+
+  </dir>
+
+
+
+
+
+
+ </fieldset>
+</form>
+
+</body>
+</html>

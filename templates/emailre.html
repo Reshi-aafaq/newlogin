@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter mail</title>
+</head>
+<body bgcolor='#dwfadw'>
+<font color="red" size="2px" ontoggle="">
+
+<b
+    Enter registered email Id <br>
+</b>
+ </font>
+
+<form method=POST>
+
+    <fieldset>
+
+        <legend> RESET </legend>
+
+
+    <dir>
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+
+    {{ form.email.label }} {{ form.email }} <br> <br>
+    {{ form.submit() }} <br> <br>
+
+  </dir>
+
+
+
+
+
+
+ </fieldset>
+</form>
+
+
+</body>
+</html>
