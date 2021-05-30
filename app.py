@@ -194,7 +194,7 @@ def accessdeny():
 def database():
     myform = authoform()
     if myform.validate_on_submit():
-        if myform.Access.data = 'radheradhe':
+        if myform.Access.data == 'radheradhe':
             return redirect(url_for('goo'))
         else:
             return redirect(url_for('accessdeny'))
