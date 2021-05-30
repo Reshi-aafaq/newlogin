@@ -13,7 +13,7 @@ from flask_mail import Mail,Message
 from email_validator import EmailNotValidError
 app=Flask(__name__,template_folder='templates')
 app.config['SECRET_KEY'] = "12sd34fgt1scv"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ufsxcdmmdwfszq:050b369945ccbfe16b68e01a05d064890239fb67550ee4ad1acac230e4bb37be@ec2-34-230-115-172.compute-1.amazonaws.com:5432/ddrvnct4dvtmel'
+app.config['SQLALCHEMY_DATABASE_URL'] = 'postgres://ufsxcdmmdwfszq:050b369945ccbfe16b68e01a05d064890239fb67550ee4ad1acac230e4bb37be@ec2-34-230-115-172.compute-1.amazonaws.com:5432/ddrvnct4dvtmel'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
