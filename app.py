@@ -17,8 +17,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ufsxcdmmdwfszq:050b369945c
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'reshiaafaq34@gmail.com'
-app.config['MAIL_PASSWORD'] =  'hellomello'
+app.config['MAIL_USERNAME'] = 
+app.config['MAIL_PASSWORD'] =  
 print(os.environ.get('EMAIL'))
 mil =Mail(app)
 db = SQLAlchemy(app)
@@ -198,7 +198,7 @@ def accessdeny():
 def database():
     myform = authoform()
     if myform.validate_on_submit():
-        if myform.Access.data == 'radheradhe':
+        if myform.Access.data ==:
             return redirect(url_for('goo'))
         else:
             return redirect(url_for('accessdeny'))
