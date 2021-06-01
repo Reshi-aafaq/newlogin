@@ -10,6 +10,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import login_user ,current_user ,logout_user
 from itsdangerous import TimedJSONWebSignatureSerializer as serializer
 from flask_mail import Mail,Message
+import cv2 as cv
 from email_validator import EmailNotValidError
 app=Flask(__name__,template_folder='templates')
 app.config['SECRET_KEY'] = "12sd34fgt1scv"
@@ -96,6 +97,33 @@ class reset_form(FlaskForm):
 class authoform(FlaskForm):
     Access = TextField("Access Password:", validators=[DataRequired()])
     submit = SubmitField('Show')
+    
+    
+def get_frame():
+    cap = cv.VideoCapture(0)
+    harcascadePath = "haarcascade_frontalface_default.xml"
+    detector = cv.CascadeClassifier(harcascadePath)
+    while (True):
+        # Capture frame-by-frame
+        ret, frame = cap.read()
+
+        if (ret):
+            # Our operations on the frame come here
+            gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+            faces = detector.detectMultiScale(gray, 1.3, 5)
+            for (x,y,w,h) in faces:
+                cv.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
+                cv.imwrite("TrainingImage\ " + str(np.random.randint(1000)) + ".jpg", gray[y:y + h, x:x + w])
+                # display the frame
+                cv.imshow('frame', frame)
+
+
+        # Display the resulting frame
+        # cv.imshow('frame',gray)
+        if cv.waitKey(1) & 0xFF == ord('q'):
+            break
+    cap.release()
+    cv.destroyAllWindows()    
 
 @app.route('/home11894ejbfiuegfrsdher%iuf%jfg#32oc')
 def hoo():
@@ -198,7 +226,7 @@ def database():
         if myform.Access.data ==:
             return redirect(url_for('goo'))
         else:
-            return redirect(url_for('accessdeny'))
+            return redirect(url_for('camera'))
 
     return render_template('autho.html',form = myform)
 
