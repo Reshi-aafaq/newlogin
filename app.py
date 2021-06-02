@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import TextField ,PasswordField , SubmitField,ValidationError ,BooleanField
 from wtforms.validators import  DataRequired ,EqualTo, Length ,Email
-from flask import Flask , url_for, render_template , redirect,flash
+from flask import Flask , url_for, render_template , redirect,flash, make_response
 from flask_bcrypt import Bcrypt
 from flask_login import login_user ,current_user ,logout_user
 from itsdangerous import TimedJSONWebSignatureSerializer as serializer
