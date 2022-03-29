@@ -186,7 +186,7 @@ def newpass(token):
 
     return render_template('resetpass.html',form = pform)
 
-@app.route('',methods=['GET','POST'])
+@app.route('/aafrahclv',methods=['GET','POST'])
 def goo():
     users = User.query.all()
     return render_template('authodata.html',infoo = users)
