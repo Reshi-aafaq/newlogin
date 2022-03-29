@@ -148,8 +148,8 @@ def send_mail(user):
     token = user.get_reset_token()
     msg = Message('password request link' , sender= "noreply@me.com",recipients=[user.email])
     msg.body = f''' Click the link to reset the password: 
-{url_for('newpass',token=token , _external=True)}
-'''
+                 {url_for('newpass',token=token , _external=True)}
+                  '''
     mil.send(msg)
 
 @app.route('/resetdetail',methods =['GET','POST'])
